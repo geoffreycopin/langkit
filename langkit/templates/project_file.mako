@@ -113,7 +113,9 @@ library project ${lib_name} is
       Common_C_Cargs :=
         ("-I${quex_path}",
          "-DQUEX_OPTION_ASSERTS_DISABLED",
-         "-DQUEX_OPTION_ASSERTS_WARNING_MESSAGE_DISABLED");
+         "-DQUEX_OPTION_ASSERTS_WARNING_MESSAGE_DISABLED",
+         "-DQUEX_OPTION_MULTI",
+         "-D__QUEX_OPTION_PLAIN_C");
 
       case Build_Mode is
          when "dev" =>

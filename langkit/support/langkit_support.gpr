@@ -3,12 +3,17 @@ with "gnatcoll_iconv";
 
 project Langkit_Support is
 
-   for Languages use ("Ada");
+   for Languages use ("Ada", "C");
    for Source_Dirs use (".");
    for Object_Dir use "obj";
 
    package Compiler is
       for Default_Switches ("Ada") use ("-gnatwae", "-gnatyg");
+      for Default_Switches ("C") use
+        ("-DQUEX_OPTION_ASSERTS_DISABLED",
+         "-DQUEX_OPTION_ASSERTS_WARNING_MESSAGE_DISABLED",
+         "-DQUEX_OPTION_MULTI",
+         "-D__QUEX_OPTION_PLAIN_C");
    end Compiler;
 
 end Langkit_Support;

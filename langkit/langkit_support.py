@@ -44,4 +44,5 @@ class LangkitSupport(object):
 
         with open(self.lksp_project_file, 'w') as f:
             f.write(common_renderer.render('langkit_support_gpr',
-                                           source_dir=self.lksp_source_dir))
+                                           source_dir=self.lksp_source_dir,
+                                           quex_path=os.environ['QUEX_PATH']))
